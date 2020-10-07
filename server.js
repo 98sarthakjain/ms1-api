@@ -39,7 +39,7 @@ app.put('/image', (req, res) => {
         .catch(err => res.status(400).json('json UNABLE TO GET ENTIRES'))
 
 })
-
-app.listen(process.env.PORT || 3000, () => {
+.listen)
+app.listen(process.env.PORT, '0.0.0.0', () => {
     console.log(`app is running on port ${process.env.PORT}`);
 })
