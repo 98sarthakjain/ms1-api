@@ -12,10 +12,10 @@ const profile = require('./controllers/profile');
 const db = knex({
     client: 'pg',
     connection: {
-        host: '127.0.0.1',
-        user: 'postgres',
-        password: '9899messenger2020',
-        database: 'ms1'
+        connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
     }
 })
 const app = express();
@@ -45,3 +45,4 @@ app.put('/image', (req, res) => {
 app.listen(process.env.PORT, '0.0.0.0', () => {
     console.log(`app is running on port ${process.env.PORT}`);
 })
+ 
